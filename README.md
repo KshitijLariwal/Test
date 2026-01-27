@@ -17,3 +17,9 @@ A simple, single-page web application written in pure **HTML**, and **JavaScript
 ## File Structure
 
 *   `index.html`: The main structure and embedded logic of the web page.
+
+## Output
+
+<img width="1360" height="264" alt="image" src="https://github.com/user-attachments/assets/e6b8f683-6fb9-4385-abcf-9b05eae9a3b6" />
+
+<img width="1366" height="211" alt="image" src="https://github.com/user-attachments/assets/6823bb24-fde0-484e-84ac-dbea9a18cccd" />
