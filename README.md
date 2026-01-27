@@ -1,6 +1,6 @@
 # Check Number Assignment
 
-A simple, single-page web application written in pure **HTML**, **CSS**, and **JavaScript** that prompts a user for a number input and determines if the number is positive, negative, or zero.
+A simple, single-page web application written in pure **HTML**, and **JavaScript** that prompts a user for a number input and determines if the number is positive, negative, or zero.
 
 ## Usage
 
