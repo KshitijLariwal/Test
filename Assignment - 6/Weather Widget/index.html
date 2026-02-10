@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="weather-app">
+            <h1 class="title">Weather App</h1>
+            
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Search for a city..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="search-btn">
+                    <span>🔍</span>
+                </button>
+            </div>
+
+            <div id="errorMessage" class="error-message"></div>
+
+            <div id="weatherContainer" class="weather-container hidden">
+                <div class="location-section">
+                    <h2 id="cityName" class="city-name"></h2>
+                    <p id="countryName" class="country-name"></p>
+                </div>
+
+                <div class="main-weather">
+                    <div class="temperature-section">
+                        <span id="temperature" class="temperature"></span>
+                        <span class="celsius">°C</span>
+                    </div>
+                    <div id="weatherIcon" class="weather-icon">☀️</div>
+                </div>
+
+                <div class="weather-condition">
+                    <p id="condition" class="condition"></p>
+                    <p id="feelsLike" class="feels-like"></p>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-card">
+                        <div class="detail-icon">💧</div>
+                        <div class="detail-content">
+                            <p class="detail-label">Humidity</p>
+                            <p id="humidity" class="detail-value"></p>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">💨</div>
+                        <div class="detail-content">
+                            <p class="detail-label">Wind Speed</p>
+                            <p id="windSpeed" class="detail-value"></p>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">🌡️</div>
+                        <div class="detail-content">
+                            <p class="detail-label">Pressure</p>
+                            <p id="pressure" class="detail-value"></p>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">👁️</div>
+                        <div class="detail-content">
+                            <p class="detail-label">Visibility</p>
+                            <p id="visibility" class="detail-value"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forecast-section">
+                    <h3>7-Day Forecast</h3>
+                    <div id="forecastContainer" class="forecast-container"></div>
+                </div>
+            </div>
+
+            <div id="loadingSpinner" class="loading-spinner hidden">
+                <div class="spinner"></div>
+                <p>Loading weather data...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
