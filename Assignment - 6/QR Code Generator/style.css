@@ -1,0 +1,236 @@
+:root {
+  --primary: #667eea;
+  --primary-dark: #5a67d8;
+  --secondary: #764ba2;
+  --success: #10b981;
+  --danger: #ef4444;
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.qr-generator {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  text-align: center;
+  color: var(--text);
+  font-size: 2rem;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-generate {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-generate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.btn-generate:active {
+  transform: translateY(0);
+}
+
+/* Error Message */
+.error-message {
+  color: var(--danger);
+  font-size: 0.9rem;
+  padding: 12px;
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: none;
+  text-align: center;
+}
+
+.error-message.show {
+  display: block;
+  animation: slideIn 0.3s ease;
+}
+
+/* QR Container */
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.qr-container.hidden {
+  display: none;
+}
+
+.qr-display {
+  background: #f9fafb;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#qrImage {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-action {
+  padding: 12px 20px;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-action:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-action:active {
+  transform: translateY(0);
+}
+
+/* Loading Spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 30px auto;
+}
+
+.spinner.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .qr-generator {
+    padding: 24px 20px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .btn-generate {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .btn-action {
+    width: 100%;
+  }
+
+  .qr-display {
+    padding: 16px;
+  }
+}

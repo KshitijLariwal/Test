@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ASCII Art Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>ASCII Art Generator</h1>
+      <p class="lead">Type text, pick a font, and generate ASCII art in real time.</p>
+    </header>
+
+    <section class="controls">
+      <div class="left">
+        <label for="textInput">Text</label>
+        <textarea id="textInput" rows="3" placeholder="Enter text...">Hello</textarea>
+
+        <div class="row">
+          <div class="field">
+            <label for="fontSelect">Font</label>
+            <select id="fontSelect"></select>
+          </div>
+
+          <div class="field">
+            <label for="sizeRange">Scale</label>
+            <input id="sizeRange" type="range" min="10" max="26" value="14">
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="copyBtn" class="btn">Copy Text</button>
+          <button id="downloadTxtBtn" class="btn">Download .txt</button>
+          <button id="downloadPngBtn" class="btn primary">Download PNG</button>
+        </div>
+      </div>
+
+      <div class="right">
+        <label>Preview</label>
+        <div id="previewWrap" class="preview-wrap">
+          <pre id="preview" class="preview" aria-live="polite"></pre>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">Powered by <a href="https://github.com/patorjk/figlet.js" target="_blank">Figlet.js</a></footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/figlet/1.2.4/figlet.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

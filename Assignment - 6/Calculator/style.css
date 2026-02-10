@@ -1,0 +1,18 @@
+/* Calculator styles */
+:root{--bg:#f3f6fb;--card:#ffffff;--accent:#4f46e5;--muted:#6b7280}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:#0f172a;display:flex;align-items:center;justify-content:center;height:100vh}
+.calc-wrap{width:100%;max-width:380px;padding:16px}
+.calculator{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 10px 30px rgba(2,6,23,0.08)}
+.display{background:#f8fafc;border-radius:8px;padding:12px 14px;margin-bottom:12px;min-height:64px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center}
+.previous{color:var(--muted);font-size:0.9rem;opacity:0.9}
+.current{font-size:1.8rem;font-weight:600;word-break:break-all}
+.buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.btn{padding:14px 12px;border-radius:8px;border:none;background:#f1f5f9;cursor:pointer;font-size:1rem}
+.btn:hover{filter:brightness(0.98)}
+.btn.op{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#fff}
+.btn.wide{grid-column:span 2}
+.btn.equals{background:linear-gradient(90deg,#059669,#10b981);color:#fff}
+#delete{background:#fee2e2;color:#b91c1c}
+#clear{background:#fef3c7;color:#92400e}
+@media (max-width:420px){.current{font-size:1.4rem}.btn{padding:12px 10px}}
