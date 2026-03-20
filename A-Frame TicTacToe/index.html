@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vertical 3D Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div id="loading">Loading 3D Scene...</div>
+
+  <a-scene shadow="type: pcfsoft" renderer="antialias: true; colorManagement: true;">
+
+    <a-entity position="0 1.5 12">
+      <a-camera active="true" look-controls="enabled: false" wasd-controls="enabled: false"></a-camera>
+    </a-entity>
+
+    <a-entity cursor="rayOrigin: mouse" raycaster="objects: .clickable"></a-entity>
+
+    <a-light type="ambient" color="#2a3040" intensity="1.2"></a-light>
+    <a-light type="spot" position="0 6 8" target="#board-center" intensity="1.5" angle="60" penumbra="0.5" castShadow="true"></a-light>
+    <a-light type="point" position="-5 5 4" color="#06b6d4" intensity="0.8"></a-light>
+
+    <a-sky color="#040811"></a-sky>
+    <a-plane position="0 -5 0" rotation="-90 0 0" width="100" height="100" color="#0b1220" material="roughness: 0.2; metalness: 0.7" shadow="receive: true"></a-plane>
+
+    <a-text id="status-text" value="Turn: X" position="0 8.5 0" align="center" width="15" color="#e6eef6" font="mozillavr"></a-text>
+    
+   <a-entity id="reset-button" position="0 -3 0">
+      <a-box class="clickable" width="2" height="0.6" depth="0.4" color="#ef4444" shadow="cast: true" animation__hover="property: scale; to: 1.1 1.1 1.1; dur: 200; startEvents: mouseenter" animation__leave="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"></a-box>
+      <a-text value="RESET" position="0 0 0.21" align="center" width="6" color="#fff"></a-text>
+    </a-entity>
+
+    <a-entity id="board-center" position="0 3 0"></a-entity>
+    
+    <a-entity id="grid-structure" shadow="cast: true; receive: true">
+      <a-box position="-1.5 3 0" width="0.2" height="9" depth="0.4" color="#1a2538" material="metalness: 0.6; roughness: 0.4"></a-box>
+      <a-box position="1.5 3 0" width="0.2" height="9" depth="0.4" color="#1a2538" material="metalness: 0.6; roughness: 0.4"></a-box>
+      <a-box position="0 1.5 0" width="9" height="0.2" depth="0.4" color="#1a2538" material="metalness: 0.6; roughness: 0.4"></a-box>
+      <a-box position="0 4.5 0" width="9" height="0.2" depth="0.4" color="#1a2538" material="metalness: 0.6; roughness: 0.4"></a-box>
+    </a-entity>
+
+    <a-entity id="cells-container"></a-entity>
+    <a-entity id="tokens-container"></a-entity>
+
+  </a-scene>
+</body>
+</html>
